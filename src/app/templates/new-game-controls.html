@@ -1,0 +1,35 @@
+<!-- bug: https://github.com/valor-software/ng2-bootstrap/issues/6 -->
+<div>
+  <div class="btn-group" dropdown [(isOpen)]="opened" autoClose="disabled">
+    <button id="start-button" type="button" class="btn btn-primary" [disabled]="controlsDisabled"
+        dropdownToggle> Start Game <span class="caret"></span></button>
+    <ul dropdownMenu role="menu" aria-labelledby="start-button">
+      <li role="menuitem"><a class="dropdown-item" href="#" (click)="setGame(1)"> Easy Game </a></li>
+      <li role="menuitem"><a class="dropdown-item" href="#" (click)="setGame(2)"> Medium Game </a></li>
+      <li role="menuitem"><a class="dropdown-item" href="#" (click)="setGame(3)"> Hard Game </a></li>
+      <li class="divider dropdown-divider"></li>
+      <li role="menuitem">
+        <a class="dropdown-item" href="#" (click)="showCustomControls=true;"> Custom Game </a>
+        <form class="custom-game-controls" *ngIf="showCustomControls" (ngSubmit)="setGame(-1)" 
+              #customGameOptsForm="ngForm">
+          <div class="form-group">
+            <label for="formRowsInput"> Enter No. Of Rows </label>
+            <input type="number" class="form-control" id="formRowsInput" min="1" max="15"
+                name="rows" [(ngModel)]="customGameOpts.rows" placeholder="Example: 7" required>
+          </div>
+          <div class="form-group">
+            <label for="formColsInput"> Enter No. Of Columns </label>
+            <input type="number" class="form-control" id="formColsInput" min="1" max="15"
+                name="cols" [(ngModel)]="customGameOpts.cols" placeholder="Example: 7" required>
+          </div>
+          <div class="form-group">
+            <label for="formMinesInput"> Enter No. Of Mines </label>
+            <input type="number" class="form-control" id="formMinesInput" min="1"
+                name="mines" [(ngModel)]="customGameOpts.mines" placeholder="Example: 5" required>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="!customGameOptsForm.form.valid">Play!</button>
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>

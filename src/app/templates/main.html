@@ -1,0 +1,10 @@
+<div>
+  <ul class="list-inline game-controls">
+    <li><new-game-controls [controlsDisabled]="currentGame && !currentGame.isOver" (startGame)=startNewGame($event)></new-game-controls></li>
+    <li><past-games [controlsDisabled]="currentGame && !currentGame.isOver" (startGame)=replayPreviousGame($event)></past-games></li>
+    <li><game-stats></game-stats></li>
+  </ul>
+  <div class="game">
+    <mine-game [gameObj]="currentGame"></mine-game>
+  </div>
+</div>

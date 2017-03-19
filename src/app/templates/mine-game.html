@@ -1,0 +1,23 @@
+<div *ngIf="gameObj" class="minefield">
+    <div class="form-inline">
+        <input type="text" id="timer" [ngModel]="gameObj.timeElapsed | toDigitalClockTime" class="form-control text-center" disabled />
+        <button type="button" class="btn btn-primary" (click)="gameComplete()"> {{ gameObj.rerun ? "Stop" : "Resign" }} </button>
+    </div>
+    <div class="progress-bar-container">
+        <progress class="progress progress-striped progress-animated" type="warning" [max]="progress.target" [value]="progress.current"
+            [ngStyle]="{'width.px': gameObj.cols * 50}">
+        </progress>
+        <span class="text" [ngStyle]="{'left.px': gameObj.cols * 50 / 2.5}">{{ progress.current }} / {{ progress.target }}</span>
+    </div>
+    <table id="mineField" cellspacing="0px" cellpadding="0px">
+        <tr *ngFor="let rowTile of gameObj.tiles" class="tableRow">
+            <td *ngFor="let tile of rowTile">
+                <input type="button" val=" " [disabled]="tile.opened || gameObj.isOver" 
+                    (click)="flipTile(tile.x, tile.y)" 
+                    (contextmenu)="flagTile(tile.x, tile.y, $event)" 
+                    class="block" [disabled]="gameObj.rerun"
+                    [ngClass]="tile.cssClass" />
+            </td>
+        </tr>
+    </table>
+</div>

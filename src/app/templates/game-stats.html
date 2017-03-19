@@ -1,0 +1,13 @@
+<div>
+  <div class="btn-group" dropdown>
+    <button id="stats-button" type="button" class="btn" (click)="refreshData()"
+            dropdownToggle> View Stats <span class="caret"></span></button>
+    <ul dropdownMenu role="menu" aria-labelledby="stats-button">
+      <li role="menuitem"><a class="dropdown-item" href="#"> Best Time: {{ stats.bestTime | toDigitalClockTime }}</a></li>      
+      <li role="menuitem"><a class="dropdown-item" href="#"> Games Won: {{ stats.gamesWon }} </a></li>
+      <li role="menuitem"><a class="dropdown-item" href="#"> Games Played: {{ stats.totalGames }} </a></li>
+      <li class="divider dropdown-divider"></li>
+      <li role="menuitem"><a class="dropdown-item" href="#" (click)="resetStats()"> Reset </a></li>
+    </ul>
+  </div>
+</div>

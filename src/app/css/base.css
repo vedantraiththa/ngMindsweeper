@@ -1,0 +1,100 @@
+body {
+  background-color: chocolate;
+}
+
+.tempelategame * {
+  width: 200px;
+  margin-left: 240px;
+}
+
+.custom-game-controls {
+  width: 150px;
+  margin: 10px 45px;
+}
+
+.game-controls {
+  margin: 20px;
+}
+
+.progress-bar-container {
+  position: relative;
+}
+
+.progress-bar-container .progress {
+  margin: 10px 0 7px;
+}
+
+.progress-bar-container .text {
+  position: absolute;
+  color: white;
+  margin-top: 9px;
+}
+
+.minefield {
+  margin: 25px;
+}
+
+/* component styles */
+table {
+  border: 1px solid black;
+}
+
+.block {
+  width: 50px;
+  height: 50px;
+  font-size: 10px;
+  background-color: #E2E2E2;
+  background-image: url("/app/images/blank.gif");
+}
+
+.explodedMine {
+  background: Red url("/app/images/bomb.png") no-repeat center;
+}
+
+.unexplodedMine {
+  background: steelblue url("/app/images/unexplodedbomb.png") no-repeat center;
+}
+
+.flag {
+  background: #E2E2E2 url("/app/images/flag.png") no-repeat center;
+}
+
+.doubt {
+  background: #E2E2E2 url("/app/images/qmark.png") no-repeat center;
+}
+
+.class0 {
+  background: url('/app/images/0.gif') no-repeat center;
+}
+
+.class1 {
+  background: url('/app/images/1.gif') no-repeat center;
+}
+
+.class2 {
+  background: url('/app/images/2.gif') no-repeat center;
+}
+
+.class3 {
+  background: url('/app/images/3.gif') no-repeat center;
+}
+
+.class4 {
+  background: url('/app/images/4.gif') no-repeat center;
+}
+
+.class5 {
+  background: url('/app/images/5.gif') no-repeat center;
+}
+
+.class6 {
+  background: url('/app/images/6.gif') no-repeat center;
+}
+
+.class7 {
+  background: url('/app/images/7.gif') no-repeat center;
+}
+
+.class8 {
+  background: url('/app/images/8.gif') no-repeat center;
+}

@@ -1,0 +1,14 @@
+<div>
+  <div class="btn-group" dropdown [(isOpen)]="opened" autoClose="disabled">
+    <button id="replay-button" type="button" class="btn" (click)="fetchGames()" [disabled]="controlsDisabled" 
+         dropdownToggle> Replay Game <span class="caret"></span></button>
+    <ul dropdownMenu role="menu" aria-labelledby="replay-button">
+      <li *ngFor="let gameObj of savedGames" role="menuitem">
+        <a class="dropdown-item" href="#" (click)="requestStartGame(gameObj)"> {{ gameObj.gameId | date:'MMMd' }}, {{ gameObj.gameId | date:'jms' }} </a>
+      </li>
+      <li *ngIf="!savedGames.length">
+          <a class="dropdown-item" href="#"> No games found </a>
+      </li>
+    </ul>
+  </div>
+</div>
